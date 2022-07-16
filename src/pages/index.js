@@ -43,7 +43,7 @@ export const pageQuery = graphql`
           )
         }
         description {
-          raw: 'dummy content'
+          raw
         }
       }
     }
@@ -53,7 +53,7 @@ export const pageQuery = graphql`
       nodes {
         name
         shortBio {
-          raw: 'dummy content'
+          raw
         }
         title
         heroImage: image {
