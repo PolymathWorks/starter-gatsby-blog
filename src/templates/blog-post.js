@@ -94,13 +94,7 @@ export const pageQuery = graphql`
           src
         }
       }
-      body {
-        raw: 'dummy content'
-      }
       tags
-      description {
-        raw: 'dummy content'
-      }
     }
     previous: contentfulBlogPost(slug: { eq: $previousPostSlug }) {
       slug
