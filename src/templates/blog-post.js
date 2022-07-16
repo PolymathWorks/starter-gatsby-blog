@@ -17,9 +17,9 @@ class BlogPostTemplate extends React.Component {
     const previous = get(this.props, 'data.previous')
     const next = get(this.props, 'data.next')
     const plainTextDescription = documentToPlainTextString(
-      JSON.parse(post.description)
+      JSON.parse(post.description.raw)
     )
-    const plainTextBody = documentToPlainTextString(JSON.parse(post.body))
+    const plainTextBody = documentToPlainTextString(JSON.parse(post.body.raw))
     const { minutes: timeToRead } = readingTime(plainTextBody)
 
     return (
@@ -42,7 +42,7 @@ class BlogPostTemplate extends React.Component {
           </span>
           <div className={styles.article}>
             <div className={styles.body}>
-              {post.body? && renderRichText(post.body)}
+              {post.body?.raw && renderRichText(post.body)}
             </div>
             <Tags tags={post.tags} />
             {(previous || next) && (
@@ -95,11 +95,11 @@ export const pageQuery = graphql`
         }
       }
       body {
-        
+        raw
       }
       tags
       description {
-        
+        raw
       }
     }
     previous: contentfulBlogPost(slug: { eq: $previousPostSlug }) {

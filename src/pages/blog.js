@@ -28,7 +28,6 @@ export const pageQuery = graphql`
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       nodes {
         title
-        description
         slug
         publishDate(formatString: "MMMM Do, YYYY")
         tags
@@ -39,6 +38,9 @@ export const pageQuery = graphql`
             width: 424
             height: 212
           )
+        }
+        description {
+          raw
         }
       }
     }
