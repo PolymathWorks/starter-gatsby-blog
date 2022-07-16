@@ -94,6 +94,9 @@ export const pageQuery = graphql`
           src
         }
       }
+      body {
+        raw
+      }
       tags
     }
     previous: contentfulBlogPost(slug: { eq: $previousPostSlug }) {
