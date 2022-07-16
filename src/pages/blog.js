@@ -40,7 +40,7 @@ export const pageQuery = graphql`
           )
         }
         description {
-          raw:"dummy content"
+          raw: 'dummy content'
         }
       }
     }
