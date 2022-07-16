@@ -42,7 +42,9 @@ export const pageQuery = graphql`
             height: 212
           )
         }
-        description
+        description {
+          
+        }
       }
     }
     allContentfulPerson(
@@ -50,7 +52,9 @@ export const pageQuery = graphql`
     ) {
       nodes {
         name
-        shortBio
+        shortBio {
+          
+        }
         title
         heroImage: image {
           gatsbyImageData(
