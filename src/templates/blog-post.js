@@ -95,11 +95,11 @@ export const pageQuery = graphql`
         }
       }
       body {
-        raw
+        raw: 'dummy content'
       }
       tags
       description {
-        raw
+        raw: 'dummy content'
       }
     }
     previous: contentfulBlogPost(slug: { eq: $previousPostSlug }) {
